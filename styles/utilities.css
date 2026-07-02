@@ -1,0 +1,273 @@
+/* ==========================================================================
+   styles/utilities.css
+   Premium Utility Styles for NextGrid Fashion
+   ========================================================================== */
+
+/* ===========================
+   Text Gradients
+=========================== */
+
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #d1d5db 35%,
+    #9ca3af 70%,
+    #6b7280 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #c084fc,
+    #8b5cf6
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===========================
+   Glass Effect
+=========================== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===========================
+   Gradient Backgrounds
+=========================== */
+
+.bg-grid {
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.04) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+}
+
+.bg-radial {
+  background: radial-gradient(
+    circle at center,
+    rgba(139,92,246,.18),
+    transparent 70%
+  );
+}
+
+.bg-hero {
+  background:
+    radial-gradient(circle at top, rgba(139,92,246,.18), transparent 45%),
+    radial-gradient(circle at bottom right, rgba(59,130,246,.12), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(236,72,153,.10), transparent 35%),
+    #050505;
+}
+
+/* ===========================
+   Glow Effects
+=========================== */
+
+.glow {
+  box-shadow:
+    0 0 30px rgba(255,255,255,.08),
+    0 0 80px rgba(139,92,246,.15);
+}
+
+.glow-purple {
+  box-shadow:
+    0 0 40px rgba(139,92,246,.35);
+}
+
+.glow-blue {
+  box-shadow:
+    0 0 40px rgba(59,130,246,.30);
+}
+
+.glow-pink {
+  box-shadow:
+    0 0 40px rgba(236,72,153,.30);
+}
+
+/* ===========================
+   Borders
+=========================== */
+
+.border-gradient {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#0b0b0b, #0b0b0b) padding-box,
+    linear-gradient(135deg, #8b5cf6, #3b82f6) border-box;
+}
+
+/* ===========================
+   Hover Effects
+=========================== */
+
+.hover-lift {
+  transition: all .35s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+.hover-scale {
+  transition: transform .3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-rotate:hover {
+  transform: rotate(6deg);
+}
+
+/* ===========================
+   Custom Scrollbar
+=========================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b2b2b;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Firefox */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #444 #050505;
+}
+
+/* ===========================
+   Selection
+=========================== */
+
+::selection {
+  background: #8b5cf6;
+  color: white;
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: .7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.rotate-slow {
+  animation: rotateSlow 25s linear infinite;
+}
+
+/* ===========================
+   Utility Helpers
+=========================== */
+
+.container-section {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.section-padding {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.shadow-soft {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, .45);
+}
+
+.shadow-xl-dark {
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, .65);
+}
+
+.rounded-xl-plus {
+  border-radius: 2rem;
+}
+
+.backdrop-xl {
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+.transition-default {
+  transition: all .3s ease;
+}
