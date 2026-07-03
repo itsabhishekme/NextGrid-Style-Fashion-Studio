@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const SITE_NAME = "NextGrid Fashion";
-const SITE_URL = "https://next-grid-style-fashion-studio.vercel.app/";
+const SITE_URL = "https://nextgridstyle-app.vercel.app/";
 const SITE_TITLE =
   "NextGrid Fashion | Premium Clothing for Men, Women & Kids";
 const SITE_DESCRIPTION =
