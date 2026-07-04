@@ -1,4 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const SITE_NAME = "NextGrid Fashion";
@@ -220,6 +223,9 @@ export default function RootLayout({
       <body className="bg-[#050505] text-white antialiased selection:bg-violet-600 selection:text-white">
         {children}
       </body>
+      <Analytics />
+      <SpeedInsights />
+      <GoogleAnalytics gaId="G-XXXXXXXXXX" />
     </html>
   );
 }
