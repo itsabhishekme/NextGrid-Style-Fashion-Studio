@@ -82,38 +82,78 @@ export default function Features() {
         </motion.div>
 
         {/* Feature Grid */}
-        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => {
             const Icon = feature.icon;
 
             return (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
+                  duration: 0.7,
+                  delay: index * 0.12,
                 }}
                 viewport={{ once: true }}
                 whileHover={{
-                  y: -8,
+                  y: -10,
+                  scale: 1.02,
                 }}
-                className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-300 hover:border-white/20"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-500 hover:border-white/20 hover:shadow-2xl hover:shadow-white/10"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 transition duration-300 group-hover:bg-white group-hover:text-black">
+                {/* Background Glow */}
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute -top-24 right-0 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+                  <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-white/5 blur-2xl"></div>
+                </div>
+
+                {/* Feature Number */}
+                <span className="absolute right-6 top-6 text-6xl font-bold text-white/5">
+                  {(index + 1).toString().padStart(2, "0")}
+                </span>
+
+                {/* Icon */}
+                <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 transition duration-300 group-hover:bg-white group-hover:text-black">
                   <Icon className="h-8 w-8" />
                 </div>
 
-                <h3 className="mt-8 text-2xl font-semibold">
+                {/* Badge */}
+                <div className="mt-6 inline-flex rounded-full border border-white/20 px-3 py-1 text-xs font-medium uppercase tracking-wider text-gray-300">
+                  Premium Feature
+                </div>
+
+                {/* Title */}
+                <h3 className="relative mt-6 text-2xl font-bold text-white">
                   {feature.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-gray-400">
+                {/* Description */}
+                <p className="relative mt-4 leading-7 text-gray-400">
                   {feature.description}
                 </p>
 
-                <div className="mt-8 h-[2px] w-0 bg-white transition-all duration-500 group-hover:w-full" />
+                {/* Divider */}
+                <div className="mt-8 h-[2px] w-0 bg-gradient-to-r from-white via-gray-300 to-white transition-all duration-500 group-hover:w-full" />
+
+                {/* Button */}
+                <button className="mt-8 flex items-center gap-2 text-sm font-medium text-white transition duration-300 group-hover:translate-x-2">
+                  Learn More
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
               </motion.div>
             );
           })}

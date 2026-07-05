@@ -13,6 +13,7 @@ import {
   Play,
   Sparkles,
   CheckCircle2,
+  Info,
 } from "lucide-react";
 
 const stats = [
@@ -195,30 +196,68 @@ export default function CTA() {
 
           </div>
 
-          {/* CTA */}
+          {/* CTA Section */}
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-6">
+            {/* Main CTA */}
+            <button className="group relative overflow-hidden rounded-full bg-white px-8 py-4 text-black shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-white/20">
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-gray-200/50 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
-          <div className="mt-14 flex flex-wrap justify-center gap-5">
-
-            <button className="group flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-black transition-all hover:scale-105">
-              <Download className="h-5 w-5" />
-
-              Download App
-
-              <ArrowRight className="transition group-hover:translate-x-1" />
+              <span className="relative flex items-center gap-3 font-semibold">
+                <Download className="h-5 w-5" />
+                Download App
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
             </button>
 
-            <button className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-white backdrop-blur-xl transition hover:border-white">
-              <Apple />
+            {/* App Store */}
+            <button className="group flex min-w-[220px] items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white/10">
+              <div className="rounded-xl bg-white/10 p-3 transition group-hover:bg-white/20">
+                <Apple className="h-7 w-7 text-white" />
+              </div>
 
-              App Store
+              <div className="text-left">
+                <p className="text-xs uppercase tracking-wider text-gray-400">
+                  Download on the
+                </p>
+                <h3 className="text-lg font-semibold text-white">
+                  App Store
+                </h3>
+              </div>
             </button>
 
-            <button className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-white backdrop-blur-xl transition hover:border-white">
-              <Play />
+            {/* Google Play */}
+            <button className="group flex min-w-[220px] items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white/10">
+              <div className="rounded-xl bg-white/10 p-3 transition group-hover:bg-white/20">
+                <Play className="h-7 w-7 text-white" />
+              </div>
 
-              Google Play
+              <div className="text-left">
+                <p className="text-xs uppercase tracking-wider text-gray-400">
+                  Get it on
+                </p>
+                <h3 className="text-lg font-semibold text-white">
+                  Google Play
+                </h3>
+              </div>
             </button>
 
+            {/* Learn More */}
+            <button className="group flex min-w-[220px] items-center gap-4 rounded-2xl border border-indigo-500/30 bg-indigo-500/10 px-6 py-4 text-white transition-all duration-300 hover:bg-indigo-500/20">
+              <div className="rounded-xl bg-indigo-500/20 p-3">
+                <Info className="h-6 w-6" />
+              </div>
+
+              <div className="text-left">
+                <p className="text-xs uppercase tracking-wider text-indigo-300">
+                  Learn More
+                </p>
+                <h3 className="font-semibold">
+                  Explore Features
+                </h3>
+              </div>
+
+              <ArrowRight className="ml-auto transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
           </div>
 
           {/* Stats */}
